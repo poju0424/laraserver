@@ -13,7 +13,11 @@
 
 Route::get('/', function () {
     return view('welcome');
-    // $users = DB::table('users')->get();
-    // return $users;
+});
+
+Route::get('newest/{currency}', function($currency) {
+	// $data = DB::table($currency)->get();
+	$data = DB::connection('default')->select("SELECT * FROM ".$currency."");
+	return $currency;
 });
 
