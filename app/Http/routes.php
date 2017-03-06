@@ -18,12 +18,12 @@ Route::get('/', function () {
 Route::get('newest/{currency}', function($currency) {
 	$tableName = "bot_".$currency;
 	// $data = DB::table("bot_jpy")->get();
-	$data = DB::table($tableName)->latest()->first();
+	$data = DB::table($tableName)orderBy('datetime')->first();
 	return $data;
 });
 
 Route::get('history/{currency}', function($currency) {
 	$tableName = "bot_".$currency;
-	$data = DB::table("bot_jpy")->get();
+	$data = DB::table($tableName)->get();
 	return $data;
 });
