@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('newest/{currency}', function($currency) {
 	$tableName = "bot_".$currency;
 	// $data = DB::table("bot_jpy")->get();
-	$data = DB::table($tableName)->orderBy('datetime', 'desc')->get()->first();
+	$data = DB::table($tableName)->orderBy('datetime', 'desc')->get();
 	return $data;
 });
 
