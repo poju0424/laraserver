@@ -17,6 +17,6 @@ Route::get('/', function () {
 
 Route::get('newest/{currency}', function($currency) {
 	$data = DB::table($currency)->get();
-	return $data;
+	return $currency;
 });
 
