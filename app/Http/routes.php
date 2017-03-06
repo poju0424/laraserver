@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    //return view('welcome');
-    $users = DB::table('users')->get();
-    return $users;
+    return view('welcome');
+    // $users = DB::table('users')->get();
+    // return $users;
 });
 
