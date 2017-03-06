@@ -21,3 +21,8 @@ Route::get('newest/{currency}', function($currency) {
 	return $data;
 });
 
+Route::get('history/{currency}', function($currency) {
+	$tableName = "bot_".$currency;
+	$data = DB::table("bot_jpy")->get();
+	return $data;
+});
