@@ -17,7 +17,8 @@ Route::get('/', function () {
 
 Route::get('newest/{currency}', function($currency) {
 	$tableName = "bot_".$currency;
-	$data = DB::table("bot_jpy")->get();
+	// $data = DB::table("bot_jpy")->get();
+	$data = DB::table($tableName)->latest()->first();
 	return $data;
 });
 
