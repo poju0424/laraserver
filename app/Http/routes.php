@@ -20,8 +20,9 @@ Route::get('newest/{currency}', function($currency) {
 	// $data = DB::table("bot_jpy")->get();
 	// $data = DB::table($tableName)->orderBy('datetime', 'desc')->get();
 	// $data = DB::table($tableName)->max('datetime');
-	$data = DB::table($tableName)->orderBy('datetime', 'desc')->first();;
-	return $data;
+	// $data = DB::table($tableName)->orderBy('datetime', 'desc')->first();
+	// return $data;
+	return (array)DB::table($tableName)->orderBy('datetime', 'desc')->first();
 });
 
 Route::get('history/{currency}', function($currency) {
