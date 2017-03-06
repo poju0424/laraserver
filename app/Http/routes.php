@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('newest/{currency}', function($currency) {
 	// $data = DB::table($currency)->get();
-	$data = DB::connection('default')->select("SELECT * FROM ".$currency."");
+	$langs = DB::table('JPY')->get();
 	return $currency;
 });
 
