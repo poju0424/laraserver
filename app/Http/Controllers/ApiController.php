@@ -10,6 +10,6 @@ class ApiController extends Controller
 {
     public function show($currency)
     {
-        //
+        echo $currency
     }
 }
