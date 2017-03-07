@@ -6,8 +6,8 @@ use testAPP\Http\Requests;
 
 class ApiController extends Controller
 {
-    public function show($currency)
+    public function show()
     {
-        echo $currency
+        echo "good";
     }
 }
