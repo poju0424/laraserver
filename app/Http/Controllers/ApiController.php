@@ -8,5 +8,8 @@ use testAPP\Http\Requests;
 
 class ApiController extends Controller
 {
-    //
+    public function show($currency)
+    {
+        //
+    }
 }
