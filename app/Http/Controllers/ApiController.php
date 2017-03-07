@@ -6,7 +6,7 @@ use testAPP\Http\Requests;
 
 class ApiController extends BaseController
 {
-    public function show()
+    public function index()
     {
         echo "good";
     }
