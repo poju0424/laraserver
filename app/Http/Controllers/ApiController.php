@@ -1,6 +1,4 @@
-<?php
-
-namespace testAPP\Http\Controllers;
+<?php namespace APP\Http\Controllers;
 
 use Illuminate\Http\Request;
 
