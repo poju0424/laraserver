@@ -64,9 +64,9 @@ class RateController extends BaseController
 		);
 		
 		for ($i=0, $max=count($searchList); $i<$max; $i++) {
-			$pos = strpos($find, $searchList[i][0]);
+			$pos = strpos($find, $searchList[$i][0]);
 			if ($pos !== false){
-				$output = $searchList[i][1];
+				$output = $searchList[$i][1];
 				break;
 			}
 		}
