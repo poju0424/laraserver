@@ -76,17 +76,17 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => $host,
-            'port' => $post,
-            'database' => $database,
-            'username' => $username,
-            'password' => $password,
+            // 'host' => $host,
+            // 'port' => $post,
+            // 'database' => $database,
+            // 'username' => $username,
+            // 'password' => $password,
 			
-			// 'host' => $dbopts["host"],
-            // 'port' => $dbopts["port"],
-            // 'database' => ltrim($dbopts["path"],'/'),
-            // 'username' => $dbopts["user"],
-            // 'password' => $dbopts["pass"],
+			'host' => $dbopts["host"],
+            'port' => $dbopts["port"],
+            'database' => ltrim($dbopts["path"],'/'),
+            'username' => $dbopts["user"],
+            'password' => $dbopts["pass"],
             
 			'charset' => 'utf8',
             'prefix' => '',
