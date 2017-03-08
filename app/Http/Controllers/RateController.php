@@ -74,7 +74,7 @@ class RateController extends BaseController
 		if($output !==0){
 			$tableName = "bot_".$output;
 			$data = (array)DB::table($tableName)->orderBy('datetime', 'desc')->first();
-			echo $data;
+			echo $data["cashbuy"];
 		}else{
 			return "(黑人問號 .jpg)";
 		}
