@@ -74,7 +74,7 @@ class RateController extends BaseController
 		if($output !==0){
 			$tableName = "bot_".$searchList[$output][1];
 			$data = (array)DB::table($tableName)->orderBy('datetime', 'desc')->first();
-			$message = "台銀"+$searchList[$output][2]+"即時匯率:".
+			$message = "台銀".$searchList[$output][2]."即時匯率:".
 					"\n 現金買入:".$data["cashbuy"].
 					"\n 現金賣出:".$data["cashsell"].
 					"\n 即期買入:".$data["ratebuy"].
