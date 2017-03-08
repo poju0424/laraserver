@@ -75,7 +75,7 @@ class RateController extends BaseController
 			$tableName = "bot_".$output;
 			return (array)DB::table($tableName)->orderBy('datetime', 'desc')->first();
 		}else{
-			echo "404";
+			return 404;
 		}
     }
 
