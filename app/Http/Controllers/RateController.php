@@ -3,10 +3,10 @@
 namespace testAPP\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller
+use Illuminate\Routing\Controller as BaseController
 use testAPP\Http\Requests;
 
-class RateController extends Controller
+class RateController extends BaseController
 {
     /**
      * Display a listing of the resource.
