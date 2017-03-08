@@ -74,7 +74,7 @@ class RateController extends BaseController
 			}
 		}
 		if($output !==0){
-			$tableName = "bot_".$searchList[$output][1];
+			$tableName = "bot_".$output;
 			$data = (array)DB::table($tableName)->orderBy('datetime', 'desc')->first();
 			$message = "台銀".$currency."即時匯率:".
 					"\n 現金買入:".$data["cashbuy"].
