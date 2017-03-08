@@ -28,6 +28,6 @@ Route::get('history/{currency}', function($currency) {
 
 Route::resource('api', 'ApiController');
 
-Route::resource('rate', 'RateController', ['names' => [
-    'edit' => 'rate.history'
+Route::resource('rate', 'RateController', ['parameters' => [
+    'rate.history' => 'currency'
 ]]);
