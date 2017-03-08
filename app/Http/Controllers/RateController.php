@@ -49,7 +49,8 @@ class RateController extends BaseController
     public function show($input)
     {
         $find = str_replace(" ","", strtolower($input));
-		$output = -1;
+		$output = 0;
+		$currency;
 		$searchList = array(
 			array("日", "jpy", "日圓"),
 			array("jp", "jpy", "日圓"),
@@ -67,14 +68,15 @@ class RateController extends BaseController
 		for ($i=0, $max=count($searchList); $i<$max; $i++) {
 			$pos = strpos($find, $searchList[$i][0]);
 			if ($pos !== false){
-				$output = $i;
+				$output = $searchList[$i][1];
+				$currency = $searchList[$i][2];
 				break;
 			}
 		}
 		if($output !==0){
 			$tableName = "bot_".$searchList[$output][1];
 			$data = (array)DB::table($tableName)->orderBy('datetime', 'desc')->first();
-			$message = "台銀".$searchList[$output][2]."即時匯率:".
+			$message = "台銀".$currency."即時匯率:".
 					"\n 現金買入:".$data["cashbuy"].
 					"\n 現金賣出:".$data["cashsell"].
 					"\n 即期買入:".$data["ratebuy"].
