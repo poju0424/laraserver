@@ -62,7 +62,7 @@ class RateController extends BaseController
 			array("hk", "HKD"),
 		);
 		$find = strtolower($name);
-		for ($i=0, $max=$searchList.length; $i<=$max; $i++) {
+		for ($i=0, $max=count($searchList); $i<$max; $i++) {
 			echo $i, $find;
 		}
 		
