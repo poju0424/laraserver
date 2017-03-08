@@ -50,17 +50,17 @@ class RateController extends BaseController
         $find = str_replace(" ","", strtolower($input));
 		$output = 0;
 		$searchList = array(
-			array("日", "JPY"),
-			array("jp", "JPY"),
-			array("美", "USD"),
-			array("us", "USD"),
-			array("人民", "CNY"),
-			array("rmb", "CNY"),
-			array("cn", "CNY"),
-			array("歐", "EUR"),
-			array("eu", "EUR"),
-			array("港", "HKD"),
-			array("hk", "HKD"),
+			array("日", "jpy"),
+			array("jp", "jpy"),
+			array("美", "usd"),
+			array("us", "usd"),
+			array("人民", "cny"),
+			array("rmb", "cny"),
+			array("cn", "cny"),
+			array("歐", "eur"),
+			array("eu", "eur"),
+			array("港", "hkd"),
+			array("hk", "hkd")
 		);
 		
 		for ($i=0, $max=count($searchList); $i<$max; $i++) {
@@ -71,11 +71,11 @@ class RateController extends BaseController
 			}
 		}
 		if($output !==0){
-			echo $tableName = "bot_".$output;
+			$tableName = "bot_".$output;
+			return (array)DB::table($tableName)->orderBy('datetime', 'desc')->first();
 		}else{
-			echo "not found!";
+			echo "404";
 		}
-		// $tableName = "bot_".$currency;
     }
 
     /**
@@ -88,7 +88,12 @@ class RateController extends BaseController
     {
         echo "edit";
     }
-
+	
+	public function history($id)
+    {
+        echo "history";
+    }
+	
     /**
      * Update the specified resource in storage.
      *
