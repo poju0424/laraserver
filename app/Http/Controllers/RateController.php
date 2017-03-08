@@ -73,7 +73,8 @@ class RateController extends BaseController
 		}
 		if($output !==0){
 			$tableName = "bot_".$output;
-			return (array)DB::table($tableName)->orderBy('datetime', 'desc')->first();
+			$data = (array)DB::table($tableName)->orderBy('datetime', 'desc')->first();
+			echo $data;
 		}else{
 			return "(黑人問號 .jpg)";
 		}
