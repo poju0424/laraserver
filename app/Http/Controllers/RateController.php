@@ -62,7 +62,10 @@ class RateController extends BaseController
 			array("歐", "eur", "歐元"),
 			array("eu", "eur", "歐元"),
 			array("港", "hkd", "港幣"),
-			array("hk", "hkd", "港幣")
+			array("hk", "hkd", "港幣"),
+			array("hk", "hkd", "港幣"),
+			array("kr", "krw", "韓元"),
+			array("韓", "krw", "韓元")
 		);
 		
 		for ($i=0, $max=count($searchList); $i<$max; $i++) {
