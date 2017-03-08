@@ -49,17 +49,17 @@ class RateController extends BaseController
     {
         // echo "show";
 		$searchList = array(
-			array("日", JPY),
-			array("jp", JPY),
-			array("美", USD),
-			array("us", USD),
-			array("人民", CNY),
-			array("rmb", CNY),
-			array("cn", CNY),
-			array("歐", EUR),
-			array("eu", EUR),
-			array("港", HKD),
-			array("hk", HKD),
+			array("日", "JPY"),
+			array("jp", "JPY"),
+			array("美", "USD"),
+			array("us", "USD"),
+			array("人民", "CNY"),
+			array("rmb", "CNY"),
+			array("cn", "CNY"),
+			array("歐", "EUR"),
+			array("eu", "EUR"),
+			array("港", "HKD"),
+			array("hk", "HKD"),
 		);
 		$find = strtolower($name);
 		for ($i=0, $max=$searchList.length; $i<=$max; $i++) {
