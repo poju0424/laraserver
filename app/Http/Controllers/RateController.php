@@ -87,7 +87,7 @@ class RateController extends BaseController
 					"\n 更新時間(".$data["datetime"].")";
 			return $message;
 		}else{
-			return "(黑人問號 .jpg)";
+			return 404;
 		}
     }
 
