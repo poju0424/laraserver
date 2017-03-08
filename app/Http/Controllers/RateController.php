@@ -3,7 +3,7 @@
 namespace testAPP\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Routing\Controller
 use testAPP\Http\Requests;
 
 class RateController extends Controller
@@ -15,7 +15,7 @@ class RateController extends Controller
      */
     public function index()
     {
-        //
+        echo "index";
     }
 
     /**
@@ -25,7 +25,7 @@ class RateController extends Controller
      */
     public function create()
     {
-        //
+        echo "create";
     }
 
     /**
@@ -36,7 +36,7 @@ class RateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo "store";
     }
 
     /**
@@ -47,7 +47,7 @@ class RateController extends Controller
      */
     public function show($id)
     {
-        //
+        echo "show";
     }
 
     /**
@@ -58,7 +58,7 @@ class RateController extends Controller
      */
     public function edit($id)
     {
-        //
+        echo "edit";
     }
 
     /**
