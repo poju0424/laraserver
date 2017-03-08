@@ -45,9 +45,10 @@ class RateController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($name)
+    public function show($input)
     {
-        // echo "show";
+        $find = str_replace(" ","", strtolower($input));
+		$output = 0;
 		$searchList = array(
 			array("日", "JPY"),
 			array("jp", "JPY"),
@@ -61,11 +62,19 @@ class RateController extends BaseController
 			array("港", "HKD"),
 			array("hk", "HKD"),
 		);
-		$find = strtolower($name);
-		for ($i=0, $max=count($searchList); $i<$max; $i++) {
-			echo $i, $find;
-		}
 		
+		for ($i=0, $max=count($searchList); $i<$max; $i++) {
+			$pos = strpos($find, $searchList[i][0]);
+			if ($pos !== false){
+				$output = $searchList[i][1];
+				break;
+			}
+		}
+		if($output !==0){
+			echo $tableName = "bot_".$output;
+		}else{
+			echo "not found!";
+		}
 		// $tableName = "bot_".$currency;
     }
 
