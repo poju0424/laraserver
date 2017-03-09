@@ -54,11 +54,7 @@ class GeoController extends BaseController
 		$client = new Client(); //GuzzleHttp\Client
 		$response = $client->get($Geo_url);
 		$result = json_decode($response->getBody(), true);
-		// print_r ($result["results"][0]["formatted_address"]);
-		// print_r ($result["results"][0]["geometry"]["location"]);
 		$address = $result["results"][0]["formatted_address"];
-		// print_r($result["results"][0]["formatted_address"]);
-		// print_r($result["results"][0]["formatted_address"][0]);
 		$lat = $result["results"][0]["geometry"]["location"]["lat"];
 		$lng = $result["results"][0]["geometry"]["location"]["lng"];
 		return array(
