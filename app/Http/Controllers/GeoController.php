@@ -56,7 +56,8 @@ class GeoController extends BaseController
 		$response = $client->get($Geo_url);
 		// $res = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
 		// echo ($res["results"]["formatted_address"]);
-		print_r ($response);
+		$result = json_decode($response->getBody(), true)
+		print_r ($result);
     }
 
     /**
