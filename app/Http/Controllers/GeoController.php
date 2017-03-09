@@ -50,13 +50,9 @@ class GeoController extends BaseController
      */
     public function show($input)
     {
-<<<<<<< HEAD
-        echo "show";
-=======
         $API_key = parse_url(getenv('GOOGLE_GEO_API_KEY'));
 		$client = new Client(); //GuzzleHttp\Client
 		echo "show";
->>>>>>> b1f3e45fbca07f226567edd5c78767681f1bdd84
     }
 
     /**
