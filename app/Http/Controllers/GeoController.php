@@ -57,10 +57,10 @@ class GeoController extends BaseController
 		// print_r ($result["results"][0]["formatted_address"]);
 		// print_r ($result["results"][0]["geometry"]["location"]);
 		$address = $result["results"][0]["formatted_address"];
-		print_r($result["results"][0]["formatted_address"]);
-		print_r($result["results"][0]["formatted_address"][0]);
-		$lat = $result["results"][0]["formatted_address"]["lat"];
-		$lng = $result["results"][0]["formatted_address"]["lng"];
+		// print_r($result["results"][0]["formatted_address"]);
+		// print_r($result["results"][0]["formatted_address"][0]);
+		$lat = $result["results"][0]["geometry"]["location"]["lat"];
+		$lng = $result["results"][0]["geometry"]["location"]["lng"];
 		return array(
 			"title" => $input,
 			"address" => $address,
