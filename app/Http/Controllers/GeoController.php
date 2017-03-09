@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use testAPP\Http\Requests;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
 
 class GeoController extends BaseController
 {
@@ -46,6 +48,7 @@ class GeoController extends BaseController
     public function show($input)
     {
         $API_key = parse_url(getenv('GOOGLE_GEO_API_KEY'));
+		$client = new Client(); //GuzzleHttp\Client
 		echo "show";
     }
 
