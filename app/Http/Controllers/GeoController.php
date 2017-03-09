@@ -51,8 +51,8 @@ class GeoController extends BaseController
         $API_key = parse_url(getenv('GOOGLE_GEO_API_KEY'));
 		$Geo_url = "https://maps.googleapis.com/maps/api/geocode/json?address=".$input."&key=".$API_key."";
 		$client = new Client(); //GuzzleHttp\Client
-		$result = $client->get($Geo_url);
-		// echo ($result["results"]["formatted_address"]);
+		$res = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
+		echo ($res["results"]["formatted_address"]);
 		print_r ($result);
     }
 
