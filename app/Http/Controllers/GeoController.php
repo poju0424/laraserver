@@ -55,7 +55,16 @@ class GeoController extends BaseController
 		$response = $client->get($Geo_url);
 		$result = json_decode($response->getBody(), true);
 		// print_r ($result["results"][0]["formatted_address"]);
-		print_r ($result["results"][0]["geometry"]["location"]);
+		// print_r ($result["results"][0]["geometry"]["location"]);
+		$address = $result["results"][0]["formatted_address"];
+		$lat = $result["results"][0]["formatted_address"]["lat"];
+		$lng = $result["results"][0]["formatted_address"]["lng"];
+		return array(
+			"title" => $input,
+			"address" => $address,
+			"latitude" => $lat,
+			"longitude " => $lng,
+		);
     }
 
     /**
