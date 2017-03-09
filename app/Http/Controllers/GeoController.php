@@ -6,7 +6,7 @@ use testAPP\Http\Requests;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
+// use GuzzleHttp\Psr7\Request as GuzzRequest;
 
 class GeoController extends BaseController
 {
