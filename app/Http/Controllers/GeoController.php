@@ -6,6 +6,10 @@ use testAPP\Http\Requests;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
+// use GuzzleHttp\Psr7\Request as GuzzRequest;
+
 class GeoController extends BaseController
 {
     /**
@@ -47,9 +51,22 @@ class GeoController extends BaseController
      */
     public function show($input)
     {
-        $API_key = parse_url(getenv('GOOGLE_GEO_API_KEY'));
+
+        $API_key = getenv('GOOGLE_GEO_API_KEY');
+		$Geo_url = "https://maps.googleapis.com/maps/api/geocode/json?address=".$input."&key=".$API_key."&region=tw&language=zh-TW";
 		$client = new Client(); //GuzzleHttp\Client
-		echo "show";
+		$response = $client->get($Geo_url);
+		$result = json_decode($response->getBody(), true);
+		$address = $result["results"][0]["formatted_address"];
+		$lat = $result["results"][0]["geometry"]["location"]["lat"];
+		$lng = $result["results"][0]["geometry"]["location"]["lng"];
+		return array(
+			"title" => $input,
+			"address" => $address,
+			"latitude" => $lat,
+			"longitude " => $lng,
+		);
+
     }
 
     /**
