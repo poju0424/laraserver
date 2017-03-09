@@ -45,7 +45,8 @@ class GeoController extends BaseController
      */
     public function show($input)
     {
-        echo "show";
+        $API_key = parse_url(getenv('GOOGLE_GEO_API_KEY'));
+		echo "show";
     }
 
     /**
