@@ -49,7 +49,7 @@ class GeoController extends BaseController
     public function show($input)
     {
         $API_key = parse_url(getenv('GOOGLE_GEO_API_KEY'));
-		$Geo_url = "https://maps.googleapis.com/maps/api/geocode/json?address=".$input."&key=".$API_key.""
+		$Geo_url = "https://maps.googleapis.com/maps/api/geocode/json?address=".$input."&key=".$API_key."";
 		$client = new Client(); //GuzzleHttp\Client
 		$result = $client->get($Geo_url);
 		echo $result;
