@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use testAPP\Http\Requests;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
@@ -49,6 +51,7 @@ class GeoController extends BaseController
      */
     public function show($input)
     {
+
         $API_key = getenv('GOOGLE_GEO_API_KEY');
 		$Geo_url = "https://maps.googleapis.com/maps/api/geocode/json?address=".$input."&key=".$API_key."&region=tw&language=zh-TW";
 		$client = new Client(); //GuzzleHttp\Client
@@ -63,6 +66,7 @@ class GeoController extends BaseController
 			"latitude" => $lat,
 			"longitude " => $lng,
 		);
+
     }
 
     /**

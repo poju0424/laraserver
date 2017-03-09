@@ -99,7 +99,7 @@ class RateController extends BaseController
      */
     public function edit($id)
     {
-        echo "edit";
+		echo "edit";
     }
 	
     /**
