@@ -67,7 +67,7 @@ class GeoController extends BaseController
             "title" => $input,
 			"address" => $address,
 			"latitude" => $lat,
-			"longitude " => $lng,
+			"longitude" => $lng,
         ];
 
     }
