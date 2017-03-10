@@ -58,12 +58,14 @@ class GeoController extends BaseController
 		$lat = $result["results"][0]["geometry"]["location"]["lat"];
 		$lng = $result["results"][0]["geometry"]["location"]["lng"];
 
+
 		return [
             "title" => $input,
 			"address" => $address,
 			"latitude" => $lat,
 			"longitude" => $lng,
         ];
+
 
     }
 
